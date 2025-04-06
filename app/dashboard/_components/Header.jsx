@@ -11,12 +11,11 @@ export const Header = () => {
     })
   return (
     <div className='flex p-4 items-center justify-between bg-secondary shadow-sm'>
-        <Image src={'/logo.svg'} alt='logo' width={88} height={88}     />
+        <Image src={'/logo.svg'} alt='logo' width={88} height={88}/>
         <ul className='hidden md:flex gap-6'>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/dashboard' && 'text-primary font-bold'}`}>Dashboard</li>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/dashboard/questions' && 'text-primary font-bold'}`}>Questions</li>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/dashboard/upgrade' && 'text-primary font-bold'}`}>Upgrade</li>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/dashboard/how' && 'text-primary font-bold'}`}>How it works?</li>
+        <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path === '/dashboard' ? 'text-primary font-black text-xl' : ''}`}>
+  <h2 className="text-xl font-black">Dashboard</h2>
+</li>
         </ul>
         <UserButton/>
     </div>

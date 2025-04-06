@@ -91,34 +91,34 @@ function AddNewInterview() {
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="font-bold text-2xl">
-              Tell us more about your job Interviewing
+              How well do you know this topic?
             </DialogTitle>
           </DialogHeader>
           <DialogDescription>
             <form onSubmit={onSubmit}>
               <div>
                 <p>
-                  Add details about your job position/role, job description, and
-                  years of experience
+                Select a topic, describe what you've learned, and rate your confidence to track your progress.
                 </p>
                 <div className="mt-7 my-3">
-                  <label>Job Role/Job Position</label>
+                  <label>Topic of Assessment:</label>
+                  
                   <Input
-                    placeholder="Ex. Full Stack Developer"
+                    placeholder="Ex. Science-Electricity "
                     required
                     onChange={(e) => setJobPosition(e.target.value)}
                   />
                 </div>
                 <div className="my-3">
-                  <label>Job Description/Tech Stack (In short)</label>
+                  <label>Detailed Description: (In short)</label>
                   <Textarea
-                    placeholder="Ex. React, Angular, NodeJs, MySql etc"
+                    placeholder="Ex. electric charge, current, resistance, Ohm's law, Series & parallel circuits"
                     required
                     onChange={(e) => setJobDescription(e.target.value)}
                   />
                 </div>
                 <div className="my-3">
-                  <label>Years of Experience</label>
+                  <label>Difficulty Level</label>
                   <Input
                     placeholder="Ex. 5"
                     type="number"

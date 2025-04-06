@@ -34,7 +34,7 @@ const RecordAnswerSection = ({
   });
   useEffect(() => {
     results.map((result) =>
-      setUserAnswer((prevAns) => prevAns + result?.transcript)
+      setUserAnswer(prevAns => prevAns + result?.transcript)
     );
   }, [results]);
 
@@ -47,11 +47,11 @@ const RecordAnswerSection = ({
   const StartStopRecording = async () => {
     if (isRecording) {
       stopSpeechToText();
-      // if (userAnswer?.length < 10) {
-      //   setLoading(false)
-      //   toast("Error while saving your answer,please record again");
-      //   return;
-      // }
+      if (userAnswer?.length < 10) {
+        setLoading(false)
+        toast("Error while saving your answer,please record again");
+        return;
+      }
     } else {
       startSpeechToText();
     }
@@ -110,7 +110,9 @@ const RecordAnswerSection = ({
   if (error) return <p>Web Speech API is not available in this browser 🤷‍</p>;
   return (
     <div className="flex justify-cente items-center flex-col">
-      <div className="flex flex-col my-20 justify-center items-center bg-black rounded-lg p-5">
+     <div className="flex flex-col my-20 justify-center items-center bg-black rounded-lg p-1">
+
+
         <Image
           src={"/webcam.png"}
           width={200}
@@ -119,26 +121,23 @@ const RecordAnswerSection = ({
           alt="webcam"
           priority
         />
-        {/* <Webcam
+        <Webcam
           style={{ height: 300, width: "100%", zIndex: 10 }}
-          mirrored={true}
-        /> */}
+  mirrored={true}
+        />
       </div>
       <Button
         disabled={loading}
         variant="outline"
         className="my-10"
-        onClick={StartStopRecording}
+        onClick={isRecording?stopSpeechToText:StartStopRecording}
       >
         {isRecording ? (
           <h2 className="text-red-600 items-center animate-pulse flex gap-2">
-            <StopCircle /> Stop Recording...
+            <Mic /> Stop Recording...
+            {/* <StopCircle/> */}
           </h2>
-        ) : (
-          <h2 className="text-primary flex gap-2 items-center">
-            <Mic /> Record Answer
-          </h2>
-        )}
+        ) : 'Record Answer'}
       </Button>
       {/* <Button onClick={() => console.log("------", userAnswer)}>
         Show User Answer

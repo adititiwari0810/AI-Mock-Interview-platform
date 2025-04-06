@@ -28,15 +28,15 @@ function Interview({ params }) {
         <div className="flex flex-col my-5 gap-5">
           <div className="flex flex-col p-5  rounded-lg border gap-5">
             <h2 className="text-lg">
-              <strong>Job Role/Job Position: </strong>
+              <strong>Topic of Assessment: </strong>
               {interviewData?.jobPosition}
             </h2>
             <h2 className="text-lg">
-              <strong>Job Description/tech Stack: </strong>
+              <strong>Detailed Description: </strong>
               {interviewData?.jobDesc}
             </h2>
             <h2 className="text-lg">
-              <strong>Years of Experience: </strong>
+              <strong>Self rating: </strong>
               {interviewData?.jobExperience}
             </h2>
           </div>
